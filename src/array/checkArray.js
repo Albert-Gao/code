@@ -30,6 +30,24 @@ const findAllBoys = (array) => {
   return boyArray;
 };
 
+const copyArray = array => [...array];
+
+const countBoysAndGirls = (array) => {
+  let boys = 0;
+  let girls = 0;
+  array.forEach((value) => {
+    if (value.gender === 'M') {
+      boys += 1;
+    }
+    else if (value.gender === 'F') {
+      girls += 1;
+    }
+  });
+  return { boys, girls };
+}
+
 exports.checkArray = checkArray;
 exports.isAlbertHere = isAlbertHere;
 exports.findAllBoys = findAllBoys;
+exports.copyArray = copyArray;
+exports.countBoysAndGirls = countBoysAndGirls;

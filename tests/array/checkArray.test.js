@@ -1,4 +1,4 @@
-const { checkArray, isAlbertHere, findAllBoys } = require('../../src/array/checkArray');
+const { checkArray, isAlbertHere, findAllBoys, copyArray, countBoysAndGirls } = require('../../src/array/checkArray');
 
 test('should return correct value', () => {
   expect(
@@ -43,4 +43,24 @@ describe('test find all boys', () => {
     ];
     expect(findAllBoys(array)).toEqual([]);
   });
+});
+
+describe('test copyArray', () => {
+  test('should return a new array', () => {
+    const toTest = [1, 'a', { name: 'albert' }, true];
+    const result = copyArray(toTest);
+
+    expect(result).toEqual(toTest);
+    expect(result).not.toBe(toTest);
+  });
+});
+
+test('count boys and girls should return 2 2 ', () => {
+  const array = [
+    { name: 'tom', gender: 'M' },
+    { name: 'lily', gender: 'F' },
+    { name: 'jim', gender: 'M' },
+    { name: 'lucy', gender: 'F' },
+  ];
+  expect(countBoysAndGirls(array)).toEqual({ boys: 2, girls: 2 });
 });
