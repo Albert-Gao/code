@@ -1,19 +1,13 @@
 /* eslint-disable implicit-arrow-linebreak */
-const checkArray = (list, flag) => {
-  return 'not implemented yet';
-};
+const checkArray = () => 'not implemented yet';
 
-const isAlbertHere = array => 'not implemented yet';
+const isAlbertHere = () => 'not implemented yet';
 
-const findAllBoys = array => {
-  return 'not implemented yet';
-};
+const findAllBoys = () => 'not implemented yet';
 
-const copyArray = array => 'not implemented yet';
+const copyArray = () => 'not implemented yet';
 
-const countBoysAndGirls = array => {
-  return 'not implemented yet';
-};
+const countBoysAndGirls = () => 'not implemented yet';
 
 exports.checkArray = checkArray;
 exports.isAlbertHere = isAlbertHere;
