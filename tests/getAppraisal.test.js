@@ -1,5 +1,13 @@
 /* eslint-disable no-trailing-spaces */
-const { getAppraisal, GRADE } = require('../src/getAppraisal');
+const { getAppraisal } = require('../src/getAppraisal');
+
+const GRADE = {
+  A: 'A',
+  B: 'B',
+  C: 'C',
+  D: 'D',
+  E: 'E',
+};
 
 // 90-100 A
 // 75-89  B
@@ -93,5 +101,4 @@ describe('error cases', () => {
   test('default should return 0', () => {
     expect(getAppraisal()).toBe(0);
   });
-
 });
