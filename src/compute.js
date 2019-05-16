@@ -1,27 +1,25 @@
 //  check value is not number return true
 //  if value is number return false
 
+const expect = 'expect: number, but received: ';
+
+function type(value) {
+  return typeof value;
+}
+
 function compute(a, b) {
-  if (typeof b !== 'number' && typeof a !== 'number') {
-    const s1 = 'expect: number, but received: ';
-    const and = ' and ';
-    const s2 = '"';
-    const s3 = ' (';
-    const s4 = ')';
-    return s1 + a + s3 + typeof a + s4 + and + s2 + b + s2 + s3 + typeof b + s4;
+  if (type(a) !== 'number' && type(b) !== 'number') {
+    return `${expect}${a} (${typeof a}) and "${b}" (${typeof b})`;
   }
-  if (typeof a !== 'number') {
-    const s1 = 'expect: number, but received: ';
-    const s2 = ' (string)';
-    const s3 = '"';
-    return s1 + s3 + a + s3 + s2;
+
+  if (type(a) !== 'number') {
+    return `${expect}"${a}" (string)`;
   }
-  if (typeof b !== 'number') {
-    const s1 = 'expect: number, but received: ';
-    const s2 = ' (string)';
-    const s3 = '"';
-    return s1 + s3 + b + s3 + s2;
+
+  if (type(b) !== 'number') {
+    return `${expect}"${b}" (string)`;
   }
+
   return a + b;
 }
 
