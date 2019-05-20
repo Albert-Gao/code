@@ -15,11 +15,11 @@ function compute(a, b) {
     return `${expect}${a} (${typeof a}) and "${b}" (${typeof b})`;
   }
 
-  if (typeof a !== 'number') {
+  if (isnumber(a)) {
     return `${expect}"${a}" (string)`;
   }
 
-  if (typeof b !== 'number') {
+  if (isnumber(b)) {
     return `${expect}"${b}" (string)`;
   }
 
