@@ -3,8 +3,15 @@
 
 const expect = 'expect: number, but received: ';
 
+function isnumber(n) {
+  if (typeof n !== 'number') {
+    return true;
+  }
+  return false;
+}
+
 function compute(a, b) {
-  if (typeof a !== 'number' && typeof b !== 'number') {
+  if (isnumber(a) && isnumber(b)) {
     return `${expect}${a} (${typeof a}) and "${b}" (${typeof b})`;
   }
 
