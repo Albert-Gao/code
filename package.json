@@ -1,0 +1,21 @@
+{
+  "name": "tdd-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/jest",
+    "test:watch": "node_modules/.bin/jest --watch"
+  },
+  "author": "Albert Gao",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.0"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
