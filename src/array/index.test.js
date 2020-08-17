@@ -4,6 +4,7 @@ const {
   findAllBoys,
   copyArray,
   countBoysAndGirls,
+  editItemInArray,
 } = require('./index');
 
 test('should return correct value', () => {
@@ -64,4 +65,57 @@ test('count boys and girls should return 2 2 ', () => {
     { name: 'lucy', gender: 'F' },
   ];
   expect(countBoysAndGirls(array)).toEqual({ boys: 2, girls: 2 });
+});
+
+describe('editItemInArray', () => {
+  test('it should be able to update item with new value', () => {
+    const array = [
+      { id: 1, name: 'albert', gender: 'M' },
+      { id: 2, name: 'jim', gender: 'F' },
+      { id: 3, name: 'lucy', gender: 'F' },
+      { id: 4, name: 'lily', gender: 'F' },
+    ];
+
+    expect(editItemInArray(array, 3, { name: 'taylor' })).toEqual([
+      { id: 1, name: 'albert', gender: 'M' },
+      { id: 2, name: 'jim', gender: 'F' },
+      { id: 3, name: 'taylor', gender: 'F' },
+      { id: 4, name: 'lily', gender: 'F' },
+    ]);
+  });
+
+  test('it should be able to update item with new value', () => {
+    const array = [
+      { id: 1, name: 'albert', gender: 'M' },
+      { id: 2, name: 'jim', gender: 'F' },
+      { id: 3, name: 'lucy', gender: 'F' },
+      { id: 4, name: 'lily', gender: 'F' },
+    ];
+
+    expect(
+      editItemInArray(array, 3, { id: 5, name: 'wong', gender: 'M' }),
+    ).toEqual([
+      { id: 1, name: 'albert', gender: 'M' },
+      { id: 2, name: 'jim', gender: 'F' },
+      { id: 5, name: 'wong', gender: 'M' },
+      { id: 4, name: 'lily', gender: 'F' },
+    ]);
+  });
+
+  test('it should not mutate the original value in terms of updating the new value', () => {
+    const array = [
+      { id: 1, name: 'albert', gender: 'M' },
+      { id: 2, name: 'jim', gender: 'F' },
+      { id: 3, name: 'lucy', gender: 'F' },
+      { id: 4, name: 'lily', gender: 'F' },
+    ];
+
+    const oldItem = array[2];
+
+    const newArray = editItemInArray(array, 3, { name: 'taylor' });
+    const newItem = newArray[2];
+
+    expect(Array.isArray(newArray)).toBe(true);
+    expect(Object.is(oldItem, newItem)).toEqual(false);
+  });
 });

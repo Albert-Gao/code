@@ -16,6 +16,7 @@
     "jest": "^26.4.0"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

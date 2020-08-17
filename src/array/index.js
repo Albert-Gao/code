@@ -9,8 +9,11 @@ const copyArray = () => 'not implemented yet';
 
 const countBoysAndGirls = () => 'not implemented yet';
 
+const editItemInArray = () => 'not implemented yet';
+
 exports.checkArray = checkArray;
 exports.isAlbertHere = isAlbertHere;
 exports.findAllBoys = findAllBoys;
 exports.copyArray = copyArray;
 exports.countBoysAndGirls = countBoysAndGirls;
+exports.editItemInArray = editItemInArray;
